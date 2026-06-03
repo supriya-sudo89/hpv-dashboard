@@ -1,9 +1,3 @@
-"""
-HPV DNA Analysis Dashboard — Godawari Medical Laboratory
-Dataset: HPV_DNA_1st_Lot_2082_083_result.csv
-Run:  streamlit run hpv_app.py
-"""
-
 import io, re, datetime
 import numpy as np
 import pandas as pd
@@ -180,18 +174,7 @@ if uploaded:
     file_bytes = uploaded.read()
     source_name = uploaded.name
 else:
-    try:
-    uploaded = st.file_uploader("Upload CSV", type=["csv"])
-
-    if uploaded:
-        file_bytes = uploaded.read()
-    else:
-        with open("HPV_DNA_1st_Lot_2082_083_result.csv", "rb") as f:
-            file_bytes = f.read()
-
-except:
-    st.error("Please upload a CSV file.")
-    st.stop()
+    with open(r"C:\Users\Acer\Desktop\python training\HPV_DNA_1st_Lot_2082_083_result.csv", "rb") as f:
         file_bytes = f.read()
     source_name = "HPV_DNA_1st_Lot_2082_083_result.csv"
 
