@@ -170,15 +170,17 @@ with st.sidebar:
     st.info("💡 Using real data from Lot 2082/083\n\n942 patient samples · 6 collection dates")
 
 # ─── LOAD DATA ───────────────────────────────────────────────────────────────
-if uploaded:
 uploaded = st.file_uploader(
-    "Upload HPV CSV File",
+    "Upload CSV",
     type=["csv"]
 )
 
 if uploaded is None:
     st.warning("Please upload a CSV file.")
     st.stop()
+
+file_bytes = uploaded.read()
+source_name = uploaded.name
 
 file_bytes = uploaded.read()
 source_name = uploaded.name
