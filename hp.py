@@ -167,15 +167,8 @@ with st.sidebar:
     report_date = st.date_input("Report Date", datetime.date.today())
 
     st.divider()
-    st.info("💡 Using real data from Lot 2082/083\n\n942 patient samples · 6 collection dates")
-
-# ─── LOAD DATA ───────────────────────────────────────────────────────────────
-# =========================
-# CSV Upload
-# =========================
-
-uploaded = st.file_uploader(
-    "Upload HPV CSV File",
+  uploaded = st.file_uploader(
+    "Upload CSV File",
     type=["csv"]
 )
 
@@ -185,14 +178,6 @@ if uploaded is None:
 
 file_bytes = uploaded.read()
 source_name = uploaded.name
-    
-
-
-
-
-    st.stop()
-
-file_bytes = uploaded.read()
 source_name = uploaded.name
     file_bytes = f.read()
 
