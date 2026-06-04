@@ -167,21 +167,14 @@ with st.sidebar:
     report_date = st.date_input("Report Date", datetime.date.today())
 
     st.divider()
-  uploaded = st.file_uploader(
-    "Upload CSV File",
-    type=["csv"]
-)
 
+# Load uploaded CSV
 if uploaded is None:
     st.warning("Please upload a CSV file.")
     st.stop()
 
 file_bytes = uploaded.read()
 source_name = uploaded.name
-source_name = uploaded.name
-    file_bytes = f.read()
-
-source_name = CSV_FILE
 
 try:
     from sklearn.preprocessing import LabelEncoder
