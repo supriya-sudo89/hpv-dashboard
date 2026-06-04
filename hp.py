@@ -174,9 +174,12 @@ if uploaded:
     file_bytes = uploaded.read()
     source_name = uploaded.name
 else:
-    with open(r"C:\Users\Acer\Desktop\python training\HPV_DNA_1st_Lot_2082_083_result.csv", "rb") as f:
-        file_bytes = f.read()
-    source_name = "HPV_DNA_1st_Lot_2082_083_result.csv"
+    CSV_FILE = "HPV_DNA_1st_Lot_2082_083_result.csv"
+
+with open(CSV_FILE, "rb") as f:
+    file_bytes = f.read()
+
+source_name = CSV_FILE
 
 try:
     from sklearn.preprocessing import LabelEncoder
