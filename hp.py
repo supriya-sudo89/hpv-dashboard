@@ -171,12 +171,27 @@ with st.sidebar:
 
 # ─── LOAD DATA ───────────────────────────────────────────────────────────────
 if uploaded:
-    file_bytes = uploaded.read()
-    source_name = uploaded.name
-else:
-    CSV_FILE = "HPV_DNA_1st_Lot_2082_083_result.csv"
+uploaded = st.file_uploader(
+    "Upload HPV CSV File",
+    type=["csv"]
+)
 
-with open(CSV_FILE, "rb") as f:
+if uploaded is None:
+    st.warning("Please upload a CSV file.")
+    st.stop()
+
+file_bytes = uploaded.read()
+source_name = uploaded.name
+    st.warning("Please upload a CSV file.")
+    st.stop()
+
+file_bytes = uploaded.read()
+source_name = uploaded.name
+    st.warning("Please upload a CSV file.")
+    st.stop()
+
+file_bytes = uploaded.read()
+source_name = uploaded.name
     file_bytes = f.read()
 
 source_name = CSV_FILE
